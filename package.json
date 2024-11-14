@@ -1,0 +1,14 @@
+{
+  "name": "zlegs-e2e",
+  "version": "1.0.0",
+  "description": "Here you can find information about how to set up and run",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bilal Taherkheli",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "1.48.2"
+  }
+}
