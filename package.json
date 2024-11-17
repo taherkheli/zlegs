@@ -4,6 +4,7 @@
   "description": "Here you can find information about how to set up and run",
   "main": "",
   "scripts": {
+    "pretest": "npx tsc --noEmit",
     "test": "npx playwright test",
     "headed": "npx playwright test --headed"
   },
@@ -11,6 +12,7 @@
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "1.48.2",
-    "@types/node": "^22.9.0"
+    "@types/node": "^22.9.0",
+    "typescript": "^5.6.3"
   }
 }
