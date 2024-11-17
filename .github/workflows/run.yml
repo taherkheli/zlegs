@@ -5,6 +5,18 @@ on:
   pull_request:
     branches: main
 
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: Select suite
+        required: false
+        default: 'login'
+        type: choice
+        options:
+          - login
+          - checkout
+          - cart
+
 jobs:
   test:
     timeout-minutes: 20
