@@ -9,13 +9,13 @@ on:
     inputs:
       suite:
         description: Select suite
-        required: false
-        default: 'login'
+        required: true
+        default: 'all'
         type: choice
         options:
           - login
-          - checkout
           - cart
+          - all
 
 jobs:
   test:
@@ -36,8 +36,18 @@ jobs:
       run: npx playwright install --with-deps
 
     - name: Run tests
-      run: npm test
-    
+      run: |
+        if [ "${{ github.event.inputs.suite }}" == "login" ]; then
+          echo "Running tests in login suite..."
+          npm run test-login
+        elif [ "${{ github.event.inputs.suite }}" == "cart" ]; then
+          echo "Running tests in cart suite..."
+          npm run test-cart
+        else
+          echo "running all tests"
+          npm test
+        fi
+
     - name: Upload report
       uses: actions/upload-artifact@v4
       if: ${{ !cancelled() }}
