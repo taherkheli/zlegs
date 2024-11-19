@@ -1,0 +1,59 @@
+------------------------------------------------------------------------------------------------
+Login 
+------------------------------------------------------------------------------------------------
+
+tc_01
+attempt login with blank username and password
+expected:
+Username is required
+
+tc_02
+attempt login with an invalid username and a blank password
+expected:
+Password is required 
+
+tc_03
+attempt login with a valid username and a blank password
+expected:
+Password is required
+
+tc_04
+attempt login with a valid username and a wrong password
+expected:
+Username and password do not match any user in this service
+
+tc_05
+attempt login with an invalid username and a wrong password
+expected:
+Username and password do not match any user in this service 
+
+tc_06
+attempt login as standard_user with correct password
+expected:
+login succeeds and user lands on 'Products'
+
+tc_07
+attempt login as locked_out_user with correct password
+expected:
+Sorry, this user has been locked out.
+
+tc_08
+attempt login as problem_user with correct password
+expected:
+login succeeds and user lands on 'Products' but
+images should be missing, verify that the source attribute of the image is malformed
+
+tc_09
+attempt login as performance_glitch_user with correct password
+expected:
+login succeeds and user lands on 'Products' but it takes a while
+
+... and so on and so forth ...
+	
+------------------------------------------------------------------------------------------------
+Shopping Cart 
+------------------------------------------------------------------------------------------------
+
+Add if time permits ....
+
+
