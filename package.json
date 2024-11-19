@@ -6,7 +6,9 @@
   "scripts": {
     "pretest": "npx tsc --noEmit",
     "test": "npx playwright test",
-    "headed": "npx playwright test --headed"
+    "headed": "npx playwright test --headed",
+    "test-login": "npx playwright test ./tests/login", 
+    "test-cart": "npx playwright test ./tests/cart"
   },
   "author": "Bilal Taherkheli",
   "license": "MIT",
